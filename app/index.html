@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login test app</title>
+    <meta charset="utf-8" />
+    <script src="bundle.js"></script>
+</head>
+<body>
+<button onclick="doLogin();">Login</button>
+<button onclick="doStuff();">Stuff</button>
+
+<script>
+    function doLogin(url) {
+        fetch("/token").
+            then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                localStorage.setItem('id_token', data.id_token);
+            });
+    }
+
+    function doStuff(url) {
+        var token = localStorage.getItem('id_token') || null;
+        fetch("/api/stuff", {
+            headers: {
+                "Authorization": "Bearer " + token,
+                "appRequestToken": "hello"
+            }
+        })
+        .then(function (response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        });
+    }
+</script>
+
+</body>
+
+</html>
+

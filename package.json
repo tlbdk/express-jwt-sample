@@ -1,0 +1,26 @@
+{
+  "name": "express-jwt-sample",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Simple Node Express JWT sample",
+  "main": "index.js",
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlbdk/express-jwt-sample.git"
+  },
+  "author": "Troels Liebe Bentsen <tlb@rapanden.dk> (http://tlbdk.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlbdk/express-jwt-sample/issues"
+  },
+  "homepage": "https://github.com/tlbdk/express-jwt-sample#readme"
+}
